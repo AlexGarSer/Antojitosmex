@@ -1,0 +1,34 @@
+// Peticiones a productos
+@api_productos = http://localhost:5000/productos
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_productos}}
+
+### Consulta de insercion de productos
+POST {{api_productos}}
+Content-Type: application/json
+
+{
+    "Nombre":"Orden de Barbacoa",
+    "Precio": 75.00,
+    "Descripcion":"Orden de tacos de barbacoa: 5 tacos de doble tortilal de maiz o una tortilla de harina ",
+    "Categoria":"Comidas",
+    "Disponibilidad":""
+}
+### Consulta de producto por id
+GET {{api_productos}}/11
+
+### Consulta para elminar un producto por su id
+DELETE {{api_productos}}/8
+
+### Consulta para actualizar los productos por id
+PUT {{api_productos}}/11
+Content-Type: application/json
+
+{
+    "Nombre":"Orden de vapor",
+    "Precio": 55.00,
+    "Descripcion":"Orden de tacos de a vapor con cueros y salsas roja y verde",
+    "Categoria":"Comidas",
+    "Disponibilidad":"1"
+}

@@ -1,0 +1,30 @@
+// Peticiones a Categorias
+@api_categorias = http://localhost:5000/categorias
+
+###
+GET {{api_categorias}}
+
+###
+POST {{api_categorias}}
+Content-Type: application/json
+
+{
+    "Nombre":"Pureba 6"
+}
+### Consulta de producto por id
+GET {{api_categorias}}/9
+
+### Consulta para elminar un producto por su id
+DELETE {{api_categorias}}/8
+
+### Consulta para actualizar los productos por id
+PUT {{api_categorias}}/9
+Content-Type: application/json
+
+{
+    "Nombre":"Orden de vapor",
+    "Precio": 55.00,
+    "Descripcion":"Orden de tacos de a vapor con cueros y salsas roja y verde",
+    "Categoria":"Comidas",
+    "Disponibilidad":"1"
+}
