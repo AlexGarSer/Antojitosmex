@@ -1,5 +1,5 @@
 // Peticiones a Categorias
-@api_categorias = http://localhost:5000/categorias
+@api_categorias = http://mysql-devlex.alwaysdata.net/categorias
 
 ###
 GET {{api_categorias}}
@@ -9,7 +9,7 @@ POST {{api_categorias}}
 Content-Type: application/json
 
 {
-    "Nombre":"Pureba 6"
+    "Nombre":"Desayuno"
 }
 ### Consulta de producto por id
 GET {{api_categorias}}/9

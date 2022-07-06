@@ -1,5 +1,5 @@
 // Peticiones a productos
-@api_productos = http://localhost:5000/productos
+@api_productos = https://antojitosmex.herokuapp.com/productos
 
 ### Consulta de Todos los pructos existentes en la tabla
 GET {{api_productos}}
