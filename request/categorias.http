@@ -1,5 +1,5 @@
 // Peticiones a Categorias
-@api_categorias = http://mysql-devlex.alwaysdata.net/categorias
+@api_categorias = https://antojitosmex.herokuapp.com/categorias
 
 ###
 GET {{api_categorias}}

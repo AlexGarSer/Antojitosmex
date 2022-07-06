@@ -35,7 +35,10 @@ app.set('port', _config["default"].port); //middleware
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: false
-})); // Rutas 
+}));
+app.get('/', function (req, res) {
+  res.send('¡Api rest desplegada y funcionando!');
+}); // Rutas 
 
 app.use(_productosRutas["default"]);
 app.use(_categoriasRutas["default"]);
