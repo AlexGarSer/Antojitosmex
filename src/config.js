@@ -8,7 +8,7 @@ config();
 console.log('El puerto elegido es: '+process.env.port);
 
 export default{
-    port : process.env.port || 5000,
+    port : process.env.port || 8000,
     dbUser: process.env.dbUser|| '',
     dbPassword: process.env.dbPassword || '',
     dbServer: process.env.dbServer || '',

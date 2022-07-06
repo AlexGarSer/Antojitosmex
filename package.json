@@ -14,7 +14,7 @@
     "example"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -29,5 +29,8 @@
     "@babel/plugin-transform-runtime": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "nodemon": "^2.0.18"
+  },
+  "engines": {
+    "node":"16.X"
   }
 }
