@@ -28,6 +28,7 @@ app.set('port' , config.port);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.get('/',function(req,res){res.send('¡Api rest desplegada y funcionando!')});
 // Rutas 
 app.use(productosRutas);
 app.use(categoriasRutas);
