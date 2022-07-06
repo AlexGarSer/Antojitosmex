@@ -5,7 +5,7 @@ import { config } from "dotenv"
 config();
 
 // Impresion para ver el codigo 
-console.log('El puerto elegido es: '+process.env.port);
+console.log('El puerto elegido es: '+process.env.PORT);
 
 export default{
     port : process.env.PORT || 8000,
