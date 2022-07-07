@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { getOrden,getOrdenById,postOrden,deleteOrdenById,updateOrdenById } from '../controladores/ordenController';
+import { getOrden,getOrdenById,postOrden,deleteOrdenById,updateOrdenById } from '../controladores/mysql/ordenController';
+//import { getOrden,getOrdenById,postOrden,deleteOrdenById,updateOrdenById } from '../controladores/sql/ordenController';
 
 const router = Router();
 

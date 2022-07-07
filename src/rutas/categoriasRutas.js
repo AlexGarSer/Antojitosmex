@@ -1,6 +1,7 @@
 
 import { Router } from 'express';
-import { getCategorias, postCategorias, getCategoriasById, deleteCategoriasById, updateCategoriasById} from '../controladores/categoriasController';
+import { getCategorias, postCategorias, getCategoriasById, deleteCategoriasById, updateCategoriasById} from '../controladores/mysql/categoriasController';
+//import { getCategorias, postCategorias, getCategoriasById, deleteCategoriasById, updateCategoriasById} from '../controladores/sql/categoriasController';
 
 const router = Router();
 

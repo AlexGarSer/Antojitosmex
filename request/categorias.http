@@ -1,5 +1,5 @@
 // Peticiones a Categorias
-@api_categorias = https://antojitosmex.herokuapp.com/categorias
+@api_categorias = http://localhost:5000/categorias
 
 ###
 GET {{api_categorias}}

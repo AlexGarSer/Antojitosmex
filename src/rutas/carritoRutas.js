@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { getCarrito,getCarritoById,postCarrito,deleteCarritoById,updateCarritoById } from '../controladores/carritoController';
+import { getCarrito,getCarritoById,postCarrito,deleteCarritoById,updateCarritoById } from '../controladores/mysql/carritoController';
+//import { getCarrito,getCarritoById,postCarrito,deleteCarritoById,updateCarritoById } from '../controladores/sql/carritoController';
 
 const router = Router();
 

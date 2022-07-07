@@ -1,12 +1,12 @@
 //
 export const queries = {
     getProductos : "SELECT * FROM Productos" ,
-    postProductos : "INSERT INTO [Productos] VALUES (@Nombre,@Precio,@Descripcion,@Categoria,@Disponibilidad)",
+    postProductos : "INSERT INTO Productos SET ?",
     getProductosById: "SELECT * FROM Productos WHERE IdProductos=@Id",
     deleteProductosById : "DELETE FROM [dbo].[Productos] Where IdProductos=@Id",
     updateProductosById : "UPDATE [Productos] SET Nombre=@Nombre,Precio=@Precio,Descripcion=@Descripcion,Categoria=@Categoria,Disponibilidad=@Disponibilidad WHERE IdProductos = @Id",
     getCategorias : "SELECT * FROM Categorias" ,
-    postCategorias : "INSERT INTO [Categorias] VALUES (@Nombre)",
+    postCategorias : "INSERT INTO Categorias SET ?",
     getCategoriasById: "SELECT * FROM Categorias WHERE id=@Id",
     deleteCategoriasById : "DELETE FROM [dbo].[Categorias] Where id=@Id",
     updateCategoriasById : "UPDATE [Categorias] SET Nombre=@Nombre WHERE id=@Id",

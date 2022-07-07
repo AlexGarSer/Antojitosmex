@@ -1,5 +1,5 @@
 // Peticiones a productos
-@api_productos = https://antojitosmex.herokuapp.com/productos
+@api_productos = http://localhost:5000/productos
 
 ### Consulta de Todos los pructos existentes en la tabla
 GET {{api_productos}}
@@ -12,8 +12,8 @@ Content-Type: application/json
     "Nombre":"Orden de Barbacoa",
     "Precio": 75.00,
     "Descripcion":"Orden de tacos de barbacoa: 5 tacos de doble tortilal de maiz o una tortilla de harina ",
-    "Categoria":"Comidas",
-    "Disponibilidad":""
+    "Categoria": 1,
+    "Disponibilidad":"1"
 }
 ### Consulta de producto por id
 GET {{api_productos}}/11

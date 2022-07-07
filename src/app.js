@@ -1,8 +1,6 @@
 //Lista de exportaciones
 
 import express  from 'express'
-
-
 import config from './config'
 
 
