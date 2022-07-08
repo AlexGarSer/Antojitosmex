@@ -1,6 +1,6 @@
 // Rutas a trasar 
 import { Router } from 'express';
-import { deleteProductosById, getProductos, getProductosById, postProductos, updateProductosById } from '../controladores/mysql/productosController';
+import { deleteProductosById, getProductos, getProductosById, postProductos, updateProductosById } from './controladores/mysql/productosController';
 //import { deleteProductosById, getProductos, getProductosById, postProductos, updateProductosById } from '../controladores/sql/productosController';
 
 const router = Router();
