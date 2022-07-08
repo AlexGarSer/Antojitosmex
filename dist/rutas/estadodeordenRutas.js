@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _estadodeordenController = require("../controladores/estadodeordenController");
+var _estadodeordenController = require("../controladores/mysql/estadodeordenController");
 
+//import { getEstadoDeOrden, postEstadoDeOrden, getEstadoDeOrdenById, deleteEstadoDeOrdenById, updateEstadoDeOrdenById} from '../controladores/sql/estadodeordenController'
 var router = (0, _express.Router)();
 router.get('/estadodeorden', _estadodeordenController.getEstadoDeOrden);
 router.post('/estadodeorden', _estadodeordenController.postEstadoDeOrden);

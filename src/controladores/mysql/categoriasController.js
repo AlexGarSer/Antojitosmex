@@ -46,45 +46,54 @@ export const postCategorias = async (req,res) => {
 
 export const getCategoriasById = async (req,res) =>{
 
-    const {Id} = req.params
+    try {
+        const {Id} = req.params
+        const pool = await getConection()
+        const result = await pool
+        .query(queries.getCategoriasById,Id);
+        // Impresion de prueba
+        console.log(result);
+        res.send(result);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    const pool = await getConection()
-    const result = await pool
-    .input('Id',Id)
-    .query(queries.getCategoriasById);
-
-    // Impresion de prueba
-    console.log(result);
-
-    res.send(Id);
 }
 
 export const deleteCategoriasById = async (req,res) =>{
 
-    const {Id} = req.params;
+    try {
+        const {Id} = req.params;
+        const pool = await getConection();
+        const result = await pool
+        .query(queries.deleteCategoriasById,Id);
+        res.send(204);
+        // Impresion de prueba
+        console.log(result);
 
-    const pool = await getConection();
-    const result = await pool
-    
-    .input('Id',Id)
-    .query(queries.deleteCategoriasById);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    res.send(204);
 }
 
 export const updateCategoriasById = async (req,res) => {
-    const { Nombre} = req.body
     const {Id} = req.params;
+    const Nombre = req.body;
     if(Nombre == null){
-            return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
-        }
+        return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
+    }
     
-    const pool = await getConection();
-    await pool
-    .input("Id",Id)
-    .input("Nombre",sql.VarChar,Nombre)
-    .query(queries.updateCategoriasById);
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.updateCategoriasById,[Nombre,Id]);
+        res.send(result)
 
-    res.json({Nombre})
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
     
 };

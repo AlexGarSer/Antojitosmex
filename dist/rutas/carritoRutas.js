@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _carritoController = require("../controladores/carritoController");
+var _carritoController = require("../controladores/mysql/carritoController");
 
+//import { getCarrito,getCarritoById,postCarrito,deleteCarritoById,updateCarritoById } from '../controladores/sql/carritoController';
 var router = (0, _express.Router)();
 router.get('/carrito', _carritoController.getCarrito);
 router.post('/carrito', _carritoController.postCarrito);

@@ -9,10 +9,10 @@ POST {{api_productos}}
 Content-Type: application/json
 
 {
-    "Nombre":"Orden de Barbacoa",
-    "Precio": 75.00,
-    "Descripcion":"Orden de tacos de barbacoa: 5 tacos de doble tortilal de maiz o una tortilla de harina ",
-    "Categoria": 1,
+    "Nombre":"Refil de refresco",
+    "Precio": 20.00,
+    "Descripcion":"Vaso rellenable de cualquier refresco de 450ml",
+    "Categoria": "Refrescos",
     "Disponibilidad":"1"
 }
 ### Consulta de producto por id
@@ -22,13 +22,13 @@ GET {{api_productos}}/11
 DELETE {{api_productos}}/8
 
 ### Consulta para actualizar los productos por id
-PUT {{api_productos}}/11
+PUT {{api_productos}}/1
 Content-Type: application/json
 
 {
-    "Nombre":"Orden de vapor",
+    "Nombre":"Tacos de canasta",
     "Precio": 55.00,
-    "Descripcion":"Orden de tacos de a vapor con cueros y salsas roja y verde",
+    "Descripcion":"Orden de tacos de canasta con cueros y salsas roja y verde",
     "Categoria":"Comidas",
     "Disponibilidad":"1"
 }

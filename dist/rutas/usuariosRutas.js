@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _usuariosController = require("../controladores/usuariosController");
+var _usuariosController = require("../controladores/mysql/usuariosController");
 
+//import { getUsuarios,getUsuariosById,postUsuarios,deleteUsuariosById,updateUsuariosById } from '../controladores/sql/usuariosController';
 var router = (0, _express.Router)();
 router.get('/usuarios', _usuariosController.getUsuarios);
 router.post('/usuarios', _usuariosController.postUsuarios);

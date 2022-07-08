@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _categoriasController = require("../controladores/categoriasController");
+var _categoriasController = require("../controladores/mysql/categoriasController");
 
+//import { getCategorias, postCategorias, getCategoriasById, deleteCategoriasById, updateCategoriasById} from '../controladores/sql/categoriasController';
 var router = (0, _express.Router)();
 router.get('/categorias', _categoriasController.getCategorias);
 router.post('/categorias', _categoriasController.postCategorias);

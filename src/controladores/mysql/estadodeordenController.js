@@ -1,14 +1,14 @@
 // Lista de imports
-import {getConection,sql,queries} from "../../database";
+import {getConection,queries} from "../../database";
 
 //
 export const getEstadoDeOrden = async (req,res) => {
 
     try {
         const pool = await getConection();
-        const result = await pool.request().query(queries.getEstadoDeOrden);
+        const result = await pool.query(queries.getEstadoDeOrden);
         // para verificar que regrese lo que debe ser console.log(result);
-        res.json(result.recordset);
+        res.json(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -26,17 +26,12 @@ export const postEstadoDeOrden = async (req,res) => {
     }
 
     try {
-            // la conexion
-            const pool = await getConection();
-            await pool.request()
-            //Cada input es un valor del formulario
-            .input("Descripcion",sql.VarChar,Descripcion)
-            // este es el query real
-            .query(queries.postEstadoDeOrden);
-
-            //Impresion para ver como se esta mandando el body
-            console.log(Descripcion);
-            res.json('¡Categoria añadida a al base de datos!');
+        // la conexion
+        const pool = await getConection();
+        await pool.query(queries.postEstadoDeOrden,Descripcion);
+        //Impresion para ver como se esta mandando el body
+        console.log(Descripcion);
+        res.json('¡Categoria añadida a al base de datos!');
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -47,28 +42,31 @@ export const getEstadoDeOrdenById = async (req,res) =>{
 
     const {Id} = req.params
 
-    const pool = await getConection()
-    const result = await pool.request()
-    .input('Id',Id)
-    .query(queries.getEstadoDeOrdenById);
-
-    // Impresion de prueba
-    console.log(result);
-
-    res.send(Id);
+    try {
+        const pool = await getConection()
+        const result = await pool.query(queries.getEstadoDeOrdenById,Id);
+        // Impresion de prueba
+        console.log(result);
+        res.send(Id);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 }
 
 export const deleteEstadoDeOrdenById = async (req,res) =>{
 
     const {Id} = req.params;
 
-    const pool = await getConection();
-    const result = await pool
-    .request()
-    .input('Id',Id)
-    .query(queries.deleteEstadoDeOrdenById);
-
-    res.send(204);
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.deleteEstadoDeOrdenById,Id);
+        console.log(result);
+        res.send(204);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 }
 
 export const updateEstadoDeOrdenById = async (req,res) => {
@@ -78,12 +76,13 @@ export const updateEstadoDeOrdenById = async (req,res) => {
             return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
         }
     
-    const pool = await getConection();
-    await pool.request()
-    .input("Id",Id)
-    .input("Descripcion",sql.VarChar,Descripcion)
-    .query(queries.updateEstadoDeOrdenById);
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.updateEstadoDeOrdenById,[Descripcion,Id]);
+        res.json({result})
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    res.json({Descripcion})
-    
 };

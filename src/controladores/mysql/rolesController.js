@@ -6,9 +6,9 @@ export const getRoles = async (req,res) => {
 
     try {
         const pool = await getConection();
-        const result = await pool.request().query(queries.getRoles);
+        const result = await pool.query(queries.getRoles);
         // para verificar que regrese lo que debe ser console.log(result);
-        res.json(result.recordset);
+        res.json(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -28,15 +28,9 @@ export const postRoles = async (req,res) => {
     try {
             // la conexion
             const pool = await getConection();
-            await pool.request()
-            //Cada input es un valor del formulario
-            .input("Nombre",sql.VarChar,Nombre)
-            .input("Descripcion",sql.VarChar,Descripcion)
-            // este es el query real
-            .query(queries.postRoles);
-
+            const result = await pool.query(queries.postRoles,[Nombre,Descripcion]);
             //Impresion para ver como se esta mandando el body
-            console.log(Nombre,Descripcion);
+            console.log(result);
             res.json('¡Rol añadido a al base de datos!');
     } catch (error) {
         res.status(500);
@@ -48,28 +42,33 @@ export const getRolesById = async (req,res) =>{
 
     const {Id} = req.params
 
-    const pool = await getConection()
-    const result = await pool.request()
-    .input('Id',Id)
-    .query(queries.getRolesById);
+    try {
+        const pool = await getConection()
+        const result = await pool.query(queries.getRolesById,Id);
+        // Impresion de prueba
+        console.log(result);
+        res.send(Id);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    // Impresion de prueba
-    console.log(result);
-
-    res.send(Id);
 }
 
 export const deleteRolesById = async (req,res) =>{
 
     const {Id} = req.params;
 
-    const pool = await getConection();
-    const result = await pool
-    .request()
-    .input('Id',Id)
-    .query(queries.deleteRolesById);
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.deleteRolesById,Id);
+        console.log(result);
+        res.send(204);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message); 
+    }
 
-    res.send(204);
 }
 
 export const updateRolesById = async (req,res) => {
@@ -80,13 +79,14 @@ export const updateRolesById = async (req,res) => {
             return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
         }
     
-    const pool = await getConection();
-    await pool.request()
-    .input("Id",Id)
-    .input("Nombre",sql.VarChar,Nombre)
-    .input("Descripcion",sql.VarChar,Descripcion)
-    .query(queries.updateRolesById);
-
-    res.json({Nombre,Descripcion})
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.updateRolesById,[Nombre,Descripcion,Id]);
+        console.log(result);
+        res.send({result})
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
     
 };

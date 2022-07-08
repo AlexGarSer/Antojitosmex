@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _ordenController = require("../controladores/ordenController");
+var _ordenController = require("../controladores/mysql/ordenController");
 
+//import { getOrden,getOrdenById,postOrden,deleteOrdenById,updateOrdenById } from '../controladores/sql/ordenController';
 var router = (0, _express.Router)();
 router.get('/orden', _ordenController.getOrden);
 router.post('/orden', _ordenController.postOrden);

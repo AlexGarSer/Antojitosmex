@@ -1,12 +1,12 @@
 // Lista de imports
-import {getConnection,sql,queries} from "../../database";
+import {getConnection,queries} from "../../database";
 
 //
 export const getCarrito = async (req,res) => {
 
     try {
         const pool = await getConnection();
-        const result = await pool.request().query(queries.getCarrito);
+        const result = await pool.query(queries.getCarrito);
         // para verificar que regrese lo que debe ser console.log(result);
         res.json(result.recordset);
     } catch (error) {
@@ -28,15 +28,7 @@ export const postCarrito = async (req,res) => {
     try {
             // la conexion
             const pool = await getConnection();
-            await pool.request()
-            //Cada input es un valor del formulario
-            .input("Fecha",sql.VarChar,Fecha)
-            .input("IdUsuario",sql.VarChar,IdUsuario)
-            .input("IdOrden",sql.Int,IdOrden)
-            .input("Total",sql.Float,Total)
-            // este es el query real
-            .query(queries.postCarrito);
-
+            await pool.query(queries.postCarrito,[Fecha,IdUsuario,IdOrden,Total]);
             //Impresion para ver como se esta mandando el body
             console.log(Fecha,IdUsuario,IdOrden,Total);
             res.json('¡Carrito añadido a al base de datos!');
@@ -50,46 +42,50 @@ export const getCarritoById = async (req,res) =>{
 
     const {Id} = req.params
 
-    const pool = await getConnection()
-    const result = await pool.request()
-    .input('Id',Id)
-    .query(queries.getCarritoById);
+    try {
+        const pool = await getConnection()
+        const result = await pool.query(queries.getCarritoById,Id);
+        // Impresion de prueba
+        console.log(result);
+        res.send(Id);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    // Impresion de prueba
-    console.log(result);
-
-    res.send(Id);
 }
 
 export const deleteCarritoById = async (req,res) =>{
 
     const {Id} = req.params;
 
-    const pool = await getConnection();
-    const result = await pool
-    .request()
-    .input('Id',Id)
-    .query(queries.deleteCarritoById);
+    try {
+        const pool = await getConnection();
+        const result = await pool.query(queries.deleteCarritoById,Id);
+        console.log(result);
+        res.send(204);    
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    res.send(204);
 }
 
 export const updateCarritoById = async (req,res) => {
-    const { Fecha,IdUsuario} = req.body
+    const { Fecha,IdUsuario,IdOrden,Total} = req.body
     const {Id} = req.params;
 
     if(Fecha == null, IdUsuario == null){
-            return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
+        return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
         }
     
-    const pool = await getConnection();
-    await pool.request().input("Id",Id)
-    .input("Fecha",sql.VarChar,Fecha)
-    .input("IdUsuario",sql.VarChar,IdUsuario)
-    .input("IdOrden",sql.Int,IdOrden)
-    .input("Total",sql.Float,Total)
-    .query(queries.updateCarritoById);
-
-    res.json({Fecha,IdUsuario,IdOrden,Total})
+    try {
+        const pool = await getConnection();
+        const result = await pool.query(queries.updateCarritoById,[Fecha,IdUsuario,IdOrden,Total,Id]);
+        res.json({result})
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
     
 };

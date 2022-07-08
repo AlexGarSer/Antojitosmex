@@ -9,22 +9,18 @@ POST {{api_categorias}}
 Content-Type: application/json
 
 {
-    "Nombre":"Desayuno"
+    "Nombre":"Refrescos"
 }
 ### Consulta de producto por id
-GET {{api_categorias}}/9
+GET {{api_categorias}}/7
 
 ### Consulta para elminar un producto por su id
-DELETE {{api_categorias}}/8
+DELETE {{api_categorias}}/6
 
 ### Consulta para actualizar los productos por id
-PUT {{api_categorias}}/9
+PUT {{api_categorias}}/7
 Content-Type: application/json
 
 {
-    "Nombre":"Orden de vapor",
-    "Precio": 55.00,
-    "Descripcion":"Orden de tacos de a vapor con cueros y salsas roja y verde",
-    "Categoria":"Comidas",
-    "Disponibilidad":"1"
+    "Nombre":"Postres"
 }

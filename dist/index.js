@@ -5,8 +5,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 var _app = _interopRequireDefault(require("./app"));
 
 //Se extrae el puerto 
-console.log('Aqui apenas vamos por el puerto...');
-
 _app["default"].listen(_app["default"].get('port')); // Se imprime el puerto del servidor
 
 

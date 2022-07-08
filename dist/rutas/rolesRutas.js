@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _rolesController = require("../controladores/rolesController");
+var _rolesController = require("../controladores/mysql/rolesController");
 
+//import { getRoles,getRolesById,postRoles,deleteRolesById,updateRolesById } from '../controladores/sql/rolesController';
 var router = (0, _express.Router)();
 router.get('/roles', _rolesController.getRoles);
 router.post('/roles', _rolesController.postRoles);

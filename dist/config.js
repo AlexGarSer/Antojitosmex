@@ -11,9 +11,9 @@ var _dotenv = require("dotenv");
 // Correr config para visualizar las variables del entorno
 (0, _dotenv.config)(); // Impresion para ver el codigo 
 
-console.log('El puerto elegido es: ' + process.env.PORT);
+console.log('El puerto elegido es: ' + process.env.port);
 var _default = {
-  port: process.env.PORT || 8000,
+  port: 5000,
   dbUser: process.env.dbUser || '',
   dbPassword: process.env.dbPassword || '',
   dbServer: process.env.dbServer || '',
