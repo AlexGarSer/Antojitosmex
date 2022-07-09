@@ -13,7 +13,7 @@ var _dotenv = require("dotenv");
 
 console.log('El puerto elegido es: ' + process.env.port);
 var _default = {
-  port: process.env.port || 3000,
+  port: process.env.PORT || 3000,
   dbUser: process.env.dbUser || '',
   dbPassword: process.env.dbPassword || '',
   dbServer: process.env.dbServer || '',
