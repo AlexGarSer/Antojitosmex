@@ -7,8 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _productosController = require("../controladores/mysql/productosController");
+var _productosController = Console.log(require("../controladores/mysql/productosController"));
 
+console.log(_productosController);
 // Rutas a trasar 
 //import { deleteProductosById, getProductos, getProductosById, postProductos, updateProductosById } from '../controladores/sql/productosController';
 var router = (0, _express.Router)();
