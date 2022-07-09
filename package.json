@@ -1,7 +1,7 @@
 {
   "name": "antojitos-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api Rest de los antojitos mexicanos",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",

@@ -1,6 +1,5 @@
 import { Router } from 'express';
-import { getUsuarios,getUsuariosById,postUsuarios,deleteUsuariosById,updateUsuariosById } from '../controladores/mysql/usuariosController';
-//import { getUsuarios,getUsuariosById,postUsuarios,deleteUsuariosById,updateUsuariosById } from '../controladores/sql/usuariosController';
+import { getUsuarios,getUsuariosById,postUsuarios,deleteUsuariosById,updateUsuariosById } from '../controladores/usuarioscontroller';
 
 const router = Router();
 

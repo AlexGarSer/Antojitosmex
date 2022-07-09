@@ -1,13 +1,13 @@
 // Lista de imports
-import {getConexion,sql,queries} from "../database";
+import {getConection,queries} from "../database";
 
 export const getProductos = async (req,res) => {
 
     try {
-        const pool = await getConexion();
-        const result = await pool.request().query(queries.getProductos);
+        const pool = await getConection();
+        const result = await pool.query(queries.getProductos);
         // para verificar que regrese lo que debe ser console.log(result);
-        res.json(result.recordset);
+        res.json(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -30,22 +30,14 @@ export const postProductos = async (req,res) => {
 
     try {
         // la conexion a la base de datos
-        const pool = await getConexion()
-        await pool.request()
-        .input("Nombre",sql.VarChar,Nombre)
-        .input("Precio",sql.Float,Precio)
-        .input("Descripcion",sql.VarChar,Descripcion)
-        .input("Categoria",sql.VarChar,Categoria)
-        .input("Disponibilidad",sql.Bit,Disponibilidad)
-        .query(queries.postProductos);
-
+        const pool = await getConection();
+        const result = await pool.query(queries.postProductos,[Nombre,Precio,Descripcion,Categoria,Disponibilidad]);
         //Impresion para ver como se esta mandando el body
         console.log(Nombre,Precio,Descripcion,Categoria,Disponibilidad)
-
-        res.json({Nombre,Precio,Descripcion,Categoria,Disponibilidad});
+        res.send({result});
     } catch (error) {
         res.status(500);
-        res.message(error.message);
+        res.send(error.message);
     }
 };
 
@@ -53,28 +45,33 @@ export const getProductosById = async (req,res) =>{
 
     const {Id} = req.params
 
-    const pool = await getConexion()
-    const result = await pool.request()
-    .input('Id',Id)
-    .query(queries.getProductosById);
+    try {
+        const pool = await getConection()
+        const result = await pool.query(queries.getProductosById,Id);
+        // Impresion de prueba
+        console.log(result);
+        res.send(Id);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    // Impresion de prueba
-    console.log(result);
-
-    res.send(Id);
 }
 
 export const deleteProductosById = async (req,res) =>{
 
     const {Id} = req.params;
 
-    const pool = await getConexion();
-    const result = await pool
-    .request()
-    .input('Id',Id)
-    .query(queries.deleteProductosById);
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.deleteProductosById,Id);
+        res.send(204);
+        console.log(result);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 
-    res.send(204);
 }
 
 export const updateProductosById = async (req,res) => {
@@ -85,17 +82,13 @@ export const updateProductosById = async (req,res) => {
     if(Nombre == null || Precio == null || Descripcion == null || Categoria == null || Disponibilidad == null){
             return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
         }
-    
-    const pool = await getConexion();
-    await pool.request()
-    .input("Id",Id)
-    .input("Nombre",sql.VarChar,Nombre)
-    .input("Precio",sql.Float,Precio)
-    .input("Descripcion",sql.VarChar,Descripcion)
-    .input("Categoria",sql.VarChar,Categoria)
-    .input("Disponibilidad",sql.Bit,Disponibilidad)
-    .query(queries.updateProductosById);
-
-    res.json({Nombre,Precio,Descripcion,Categoria,Disponibilidad})
+    try {
+        const pool = await getConection();
+        const result = await pool.query(queries.updateMysqlProductosById,[Nombre,Precio,Descripcion,Categoria,Disponibilidad,Id]);
+        res.send(result);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
     
 };

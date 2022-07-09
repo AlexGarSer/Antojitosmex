@@ -1,5 +1,5 @@
 // Lista de imports
-import {getConection,sql,queries} from "../../database";
+import {getConection,queries} from "../database";
 
 //
 export const getCategorias = async (req,res) => {

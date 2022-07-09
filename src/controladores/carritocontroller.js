@@ -1,5 +1,5 @@
 // Lista de imports
-import {getConnection,queries} from "../../database";
+import {getConnection,queries} from "../database";
 
 //
 export const getCarrito = async (req,res) => {

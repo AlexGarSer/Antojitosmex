@@ -1,7 +1,6 @@
 
 import { Router } from 'express';
-import { getEstadoDeOrden, postEstadoDeOrden, getEstadoDeOrdenById, deleteEstadoDeOrdenById, updateEstadoDeOrdenById} from '../controladores/mysql/estadodeordenController'
-//import { getEstadoDeOrden, postEstadoDeOrden, getEstadoDeOrdenById, deleteEstadoDeOrdenById, updateEstadoDeOrdenById} from '../controladores/sql/estadodeordenController'
+import { getEstadoDeOrden, postEstadoDeOrden, getEstadoDeOrdenById, deleteEstadoDeOrdenById, updateEstadoDeOrdenById} from '../controladores/estadodeordencontroller'
 
 const router = Router();
 

@@ -1,5 +1,5 @@
 // Lista de imports
-import {getConection,queries} from "../../database";
+import {getConection,queries} from "../database";
 
 //
 export const getOrden = async (req,res) => {

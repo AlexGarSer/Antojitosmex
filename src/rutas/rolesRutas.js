@@ -1,6 +1,5 @@
 import { Router } from 'express';
-import { getRoles,getRolesById,postRoles,deleteRolesById,updateRolesById } from '../controladores/mysql/rolesController';
-//import { getRoles,getRolesById,postRoles,deleteRolesById,updateRolesById } from '../controladores/sql/rolesController';
+import { getRoles,getRolesById,postRoles,deleteRolesById,updateRolesById } from '../controladores/rolescontroller';
 
 const router = Router();
 
