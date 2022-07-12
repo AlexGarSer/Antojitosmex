@@ -50,7 +50,7 @@ export const getProductosById = async (req,res) =>{
         const result = await pool.query(queries.getProductosById,Id);
         // Impresion de prueba
         console.log(result);
-        res.send(Id);
+        res.send(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
