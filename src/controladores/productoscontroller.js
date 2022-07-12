@@ -34,7 +34,7 @@ export const postProductos = async (req,res) => {
         const result = await pool.query(queries.postProductos,[Nombre,Precio,Descripcion,Categoria,Disponibilidad]);
         //Impresion para ver como se esta mandando el body
         console.log(Nombre,Precio,Descripcion,Categoria,Disponibilidad)
-        res.send({result});
+        res.json({result});
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -50,7 +50,7 @@ export const getProductosById = async (req,res) =>{
         const result = await pool.query(queries.getProductosById,Id);
         // Impresion de prueba
         console.log(result);
-        res.send({result});
+        res.json({result});
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -85,7 +85,7 @@ export const updateProductosById = async (req,res) => {
     try {
         const pool = await getConection();
         const result = await pool.query(queries.updateMysqlProductosById,[Nombre,Precio,Descripcion,Categoria,Disponibilidad,Id]);
-        res.send(result);
+        res.json(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
