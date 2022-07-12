@@ -5,10 +5,10 @@ import { config } from "dotenv"
 config();
 
 // Impresion para ver el codigo 
-console.log('El puerto elegido es: '+process.env.port);
+console.log('El puerto elegido es: '+process.env.PORT);
 
 export default{
-    port: process.env.port || 3000,
+    port: process.env.PORT || 3000,
     dbUser: process.env.dbUser|| '',
     dbPassword: process.env.dbPassword || '',
     dbServer: process.env.dbServer || '',
