@@ -47,7 +47,7 @@ export const getCarritoById = async (req,res) =>{
         const result = await pool.query(queries.getCarritoById,Id);
         // Impresion de prueba
         console.log(result);
-        res.send(Id);
+        res.send(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
