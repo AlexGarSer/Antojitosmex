@@ -42,9 +42,9 @@ export const queries = {
     deleteEstadoDeOrdenById : "DELETE FROM EstadoDeOrden Where IdEsatdoDeOrden = ?",
     updateEstadoDeOrdenById : "UPDATE EstadoDeOrden SET Descripcion = ? WHERE IdEstadoDeOrden = ?",
 
-    getEstadoDisponibilidad : "SELECT * FROM EstadoDisponibilidad" ,
-    postEstadoDisponibilidad : "INSERT INTO `EstadoDisponibilidad`(`IdDisponibilidad`, `Descripcion`) VALUES (Null,?)",
-    getEstadoDisponibilidadById: "SELECT * FROM EstadoDisponibilidad WHERE IdDisponibilidad = ?",
-    deleteEstadoDisponibilidadById : "DELETE FROM EstadoDisponibilidad Where IdDisponibilidad = ?",
-    updateEstadoDisponibilidadById : "UPDATE EstadoDisponibilidad SET Descripcion = ? WHERE IdDisponibilidad = ?",
+    getEstadoDisponibilidad : "SELECT * FROM EstadoDeDisponibilidad" ,
+    postEstadoDisponibilidad : "INSERT INTO `EstadoDeDisponibilidad`(`IdDisponibilidad`, `Descripcion`) VALUES (Null,?)",
+    getEstadoDisponibilidadById: "SELECT * FROM EstadoDeDisponibilidad WHERE IdDisponibilidad = ?",
+    deleteEstadoDisponibilidadById : "DELETE FROM EstadoDeDisponibilidad Where IdDisponibilidad = ?",
+    updateEstadoDisponibilidadById : "UPDATE EstadoDeDisponibilidad SET Descripcion = ? WHERE IdDisponibilidad = ?",
 }   
