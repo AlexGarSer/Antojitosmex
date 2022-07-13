@@ -43,8 +43,8 @@ export const queries = {
     updateEstadoDeOrdenById : "UPDATE EstadoDeOrden SET Descripcion = ? WHERE IdEstadoDeOrden = ?",
 
     getEstadoDisponibilidad : "SELECT * FROM EstadoDeDisponibilidad" ,
-    postEstadoDisponibilidad : "INSERT INTO `EstadoDeDisponibilidad`(`IdDisponibilidad`, `Descripcion`) VALUES (Null,?)",
+    postEstadoDisponibilidad : "INSERT INTO `EstadoDeDisponibilidad`(`IdDisponibilidad`, `Nombre`) VALUES (Null,?)",
     getEstadoDisponibilidadById: "SELECT * FROM EstadoDeDisponibilidad WHERE IdDisponibilidad = ?",
     deleteEstadoDisponibilidadById : "DELETE FROM EstadoDeDisponibilidad Where IdDisponibilidad = ?",
-    updateEstadoDisponibilidadById : "UPDATE EstadoDeDisponibilidad SET Descripcion = ? WHERE IdDisponibilidad = ?",
+    updateEstadoDisponibilidadById : "UPDATE EstadoDeDisponibilidad SET Nombre = ? WHERE IdDisponibilidad = ?",
 }   

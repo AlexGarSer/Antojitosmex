@@ -1,5 +1,5 @@
 // Peticiones a Categorias
-@api_localhost = http://localhost:5000/categorias
+@api_localhost = http://localhost:5000/estadodisponibilidad
 @api_deploy = https://antojitosmex.herokuapp.com/estadodisponibilidad
 ###
 GET {{api_localhost}}
