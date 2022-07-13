@@ -1,6 +1,6 @@
 // Peticiones a productos
-//@api_productos = https://antojitosmex.herokuapp.com/productos
-@api_productos = http://localhost:5000/productos
+@api_productos = https://antojitosmex.herokuapp.com/productos
+//@api_productos = http://localhost:5000/productos
 
 ### Consulta de Todos los pructos existentes en la tabla
 GET {{api_productos}}
@@ -20,7 +20,7 @@ Content-Type: application/json
 GET {{api_productos}}/1
 
 ### Consulta para elminar un producto por su id
-DELETE {{api_productos}}/8
+DELETE {{api_productos}}/4
 
 ### Consulta para actualizar los productos por id
 PUT {{api_productos}}/2

@@ -11,6 +11,7 @@ import rolesRutas from './rutas/rolesRutas'
 import ordenRutas from './rutas/ordenRutas'
 import estadodeordenRutas from './rutas/estadodeordenRutas'
 import usuariosRutas from './rutas/usuariosRutas'
+import estadodisponibilidadRutas from './rutas/estadodisponibilidadRutas'
 
 
 // App corre express
@@ -19,7 +20,7 @@ const app = express();
 // Configuraciones de app
 
 // Puerto extraido de config
-app.set('port' , config.port);
+app.set('port' , config.PORT);
 
 
 //middleware
@@ -33,6 +34,7 @@ app.use(categoriasRutas);
 app.use(carritoRutas);
 app.use(rolesRutas);
 app.use(ordenRutas);
+app.use(estadodisponibilidadRutas);
 app.use(estadodeordenRutas);
 app.use(usuariosRutas);
 
