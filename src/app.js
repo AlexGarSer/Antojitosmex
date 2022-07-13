@@ -20,7 +20,7 @@ const app = express();
 // Configuraciones de app
 
 // Puerto extraido de config
-app.set('port' , config.PORT);
+app.set('port' , config.port);
 
 
 //middleware
