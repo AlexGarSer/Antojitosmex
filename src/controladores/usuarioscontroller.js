@@ -78,5 +78,5 @@ export const updateUsuariosById = async (req,res) => {
         }
     const pool = await getConection();
     const result = await pool.query(queries.updateUsuariosById,[Nombre,Descripcion,IdRol,Id]);
-    res.json({result})
+    res.json(result)
 };

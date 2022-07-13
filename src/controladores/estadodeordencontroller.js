@@ -79,7 +79,7 @@ export const updateEstadoDeOrdenById = async (req,res) => {
     try {
         const pool = await getConection();
         const result = await pool.query(queries.updateEstadoDeOrdenById,[Descripcion,Id]);
-        res.json({result})
+        res.json(result)
     } catch (error) {
         res.status(500);
         res.send(error.message);

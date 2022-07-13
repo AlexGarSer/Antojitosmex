@@ -83,7 +83,7 @@ export const updateRolesById = async (req,res) => {
         const pool = await getConection();
         const result = await pool.query(queries.updateRolesById,[Nombre,Descripcion,Id]);
         console.log(result);
-        res.send({result})
+        res.send(result)
     } catch (error) {
         res.status(500);
         res.send(error.message);
