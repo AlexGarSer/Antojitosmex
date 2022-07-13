@@ -1,9 +1,12 @@
 // Peticiones a productos
 @api_productos = https://antojitosmex.herokuapp.com/productos
-//@api_productos = http://localhost:5000/productos
+@api_deploy = http://localhost:5000/productos
 
 ### Consulta de Todos los pructos existentes en la tabla
 GET {{api_productos}}
+
+###
+GET {{api_deploy}}
 
 ### Consulta de insercion de productos
 POST {{api_productos}}
@@ -16,14 +19,45 @@ Content-Type: application/json
     "Categoria": "Refrescos",
     "Disponibilidad":"1"
 }
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+    "Nombre":"Refil de refresco",
+    "Precio": 20.00,
+    "Descripcion":"Vaso rellenable de cualquier refresco de 450ml",
+    "Categoria": "Refrescos",
+    "Disponibilidad":"1"
+}
+
 ### Consulta de producto por id
 GET {{api_productos}}/1
+
+###
+GET {{api_deploy}}/2
 
 ### Consulta para elminar un producto por su id
 DELETE {{api_productos}}/4
 
+###
+DELETE  {{api_deploy}}/2
+
 ### Consulta para actualizar los productos por id
 PUT {{api_productos}}/2
+Content-Type: application/json
+
+{
+    "Nombre":"Tacos de canasta",
+    "Precio": 55.00,
+    "Descripcion":"Orden de tacos de canasta con cueros y salsas roja y verde",
+    "Categoria":"Comidas",
+    "Disponibilidad":"1"
+}
+
+###
+PUT {{api_deploy}}/1
 Content-Type: application/json
 
 {
