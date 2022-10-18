@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _express = require("express");
-
 var _categoriascontroller = require("../controladores/categoriascontroller");
-
 var router = (0, _express.Router)();
 router.get('/categorias', _categoriascontroller.getCategorias);
 router.post('/categorias', _categoriascontroller.postCategorias);

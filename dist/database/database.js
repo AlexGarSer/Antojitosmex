@@ -1,7 +1,6 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12,26 +11,19 @@ Object.defineProperty(exports, "mysql", {
     return _promiseMysql["default"];
   }
 });
-
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
-
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
-
 var _promiseMysql = _interopRequireDefault(require("promise-mysql"));
-
 var _config = _interopRequireDefault(require("../config"));
-
 var conexion = {
   host: _config["default"].dbServer,
   database: _config["default"].dbDataBase,
   user: _config["default"].dbUser,
   password: _config["default"].dbPassword
 };
-
 function getConection() {
   return _getConection.apply(this, arguments);
 }
-
 function _getConection() {
   _getConection = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
     var pool;
@@ -42,11 +34,9 @@ function _getConection() {
             _context.prev = 0;
             pool = _promiseMysql["default"].createPool(conexion);
             return _context.abrupt("return", pool);
-
           case 5:
             _context.prev = 5;
             _context.t0 = _context["catch"](0);
-
           case 7:
           case "end":
             return _context.stop();
@@ -56,5 +46,4 @@ function _getConection() {
   }));
   return _getConection.apply(this, arguments);
 }
-
 ;

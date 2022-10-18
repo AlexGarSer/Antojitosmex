@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _express = require("express");
-
 var _rolescontroller = require("../controladores/rolescontroller");
-
 var router = (0, _express.Router)();
 router.get('/roles', _rolescontroller.getRoles);
 router.post('/roles', _rolescontroller.postRoles);

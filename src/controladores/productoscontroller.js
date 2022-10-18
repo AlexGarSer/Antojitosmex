@@ -84,7 +84,7 @@ export const updateProductosById = async (req,res) => {
         }
     try {
         const pool = await getConection();
-        const result = await pool.query(queries.updateMysqlProductosById,[Nombre,Precio,Descripcion,Categoria,Disponibilidad,Id]);
+        const result = await pool.query(queries.updateProductosById,[Nombre,Precio,Descripcion,Categoria,Disponibilidad,Id]);
         res.json(result);
     } catch (error) {
         res.status(500);

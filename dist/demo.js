@@ -1,27 +1,31 @@
 "use strict";
 
 var express = require('express');
-
 var app = express();
+var morgan = require('morgan');
 
-var morgan = require('morgan'); // Ajustes
+// Ajustes
 // Cambia el puerto cuando se utilizar Azure o Heroku
-
-
 app.set('port', process.env.PORT || 3000);
-app.set('json spaces', 2); //Midelwares
+app.set('json spaces', 2);
+
+//Midelwares
+
 // Formato en que se muestran las solicitudes
+app.use(morgan('dev'));
 
-app.use(morgan('dev')); // Lector de url para formularios
-
+// Lector de url para formularios
 app.use(express.urlencoded({
   extended: false
-})); // Mostrar info en formato json
+}));
 
-app.use(express.json()); //Rutas
+// Mostrar info en formato json
+app.use(express.json());
 
-app.use(require('./rutas/index')); // Iniciando el servidor
+//Rutas
+app.use(require('./rutas/index'));
 
+// Iniciando el servidor
 app.listen(3000, function () {
   console.log('Server on port ${3000}');
 });
