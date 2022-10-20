@@ -8,7 +8,7 @@ export const getCarrito = async (req,res) => {
         const pool = await getConection();
         const result = await pool.query(queries.getCarrito);
         // para verificar que regrese lo que debe ser console.log(result);
-        res.json(result.recordset);
+        res.json(result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
