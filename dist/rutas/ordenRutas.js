@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _express = require("express");
-
 var _ordencontroller = require("../controladores/ordencontroller");
-
 var router = (0, _express.Router)();
 router.get('/orden', _ordencontroller.getOrden);
 router.post('/orden', _ordencontroller.postOrden);

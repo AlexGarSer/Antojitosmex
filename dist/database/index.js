@@ -12,9 +12,7 @@ Object.defineProperty(exports, "queries", {
     return _querys.queries;
   }
 });
-
 var _conections = require("./conections");
-
 Object.keys(_conections).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -26,9 +24,7 @@ Object.keys(_conections).forEach(function (key) {
     }
   });
 });
-
 var _database = require("./database");
-
 Object.keys(_database).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -40,5 +36,4 @@ Object.keys(_database).forEach(function (key) {
     }
   });
 });
-
 var _querys = require("./querys");

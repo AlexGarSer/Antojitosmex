@@ -1,7 +1,6 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12,16 +11,12 @@ Object.defineProperty(exports, "sql", {
     return _mssql["default"];
   }
 });
-
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
-
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
-
 var _mssql = _interopRequireDefault(require("mssql"));
-
 var _config = _interopRequireDefault(require("../config"));
-
 //Lista de importaciones
+
 // Configuracion de la conexion
 var dbConfiguracion = {
   user: _config["default"].dbUser,
@@ -32,12 +27,12 @@ var dbConfiguracion = {
     encrypt: false,
     trustServerCertificate: false
   }
-}; //Realizar al conexion con esta configuracion de manera asincrona
+};
 
+//Realizar al conexion con esta configuracion de manera asincrona
 function getConexion() {
   return _getConexion.apply(this, arguments);
 }
-
 function _getConexion() {
   _getConexion = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
     var pool;
@@ -50,18 +45,15 @@ function _getConexion() {
             console.log("Apunto de conseguir la conexion");
             _context.next = 4;
             return _mssql["default"].connect(dbConfiguracion);
-
           case 4:
             pool = _context.sent;
             return _context.abrupt("return", pool);
-
           case 8:
             _context.prev = 8;
             _context.t0 = _context["catch"](0);
             // Por si sale un error poder ver que paso
             console.log('Algo salio mal en el try catch del pool');
             console.error(_context.t0);
-
           case 12:
           case "end":
             return _context.stop();

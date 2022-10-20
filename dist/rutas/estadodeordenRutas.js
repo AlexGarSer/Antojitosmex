@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _express = require("express");
-
 var _estadodeordencontroller = require("../controladores/estadodeordencontroller");
-
 var router = (0, _express.Router)();
 router.get('/estadodeorden', _estadodeordencontroller.getEstadoDeOrden);
 router.post('/estadodeorden', _estadodeordencontroller.postEstadoDeOrden);
