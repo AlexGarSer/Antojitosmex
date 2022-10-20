@@ -1,0 +1,53 @@
+// Peticiones a productos
+@api_eventos = http://localhost:5000/productos
+@api_deploy = https://antojitosmex.herokuapp.com/productos
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_eventos}}
+
+###
+GET {{api_deploy}}
+
+### Consulta de insercion de productos
+POST {{api_eventos}}
+Content-Type: application/json
+
+{
+//Estructura de la peticion
+}
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+//Estructura de la peticion
+}
+
+### Consulta de producto por id
+GET {{api_eventos}}/1
+
+###
+GET {{api_deploy}}/2
+
+### Consulta para elminar un producto por su id
+DELETE {{api_eventos}}/4
+
+###
+DELETE  {{api_deploy}}/2
+
+### Consulta para actualizar los productos por id
+PUT {{api_eventos}}/2
+Content-Type: application/json
+
+{
+//Estructura de la peticion
+}
+
+###
+PUT {{api_deploy}}/1
+Content-Type: application/json
+
+{
+//Estructura de la peticion
+}

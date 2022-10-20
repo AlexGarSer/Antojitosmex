@@ -1,0 +1,30 @@
+// Peticiones a Categorias
+@api_alumnos = http://localhost:5000/alumnos
+
+@api_deploy = 
+
+###
+GET {{api_alumnos}}
+
+###
+GET {{api_deploy}}
+###
+POST {{api_alumnos}}
+Content-Type: application/json
+
+{
+//Estructura de la peticion
+}
+### Consulta de producto por id
+GET {{api_alumnos}}/7
+
+### Consulta para elminar un producto por su id
+DELETE {{api_alumnos}}/6
+
+### Consulta para actualizar los productos por id
+PUT {{api_alumnos}}/7
+Content-Type: application/json
+
+{
+//Estructura de la peticion
+}
