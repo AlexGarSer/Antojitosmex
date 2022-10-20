@@ -5,7 +5,7 @@ import {getConnection,queries} from "../database";
 export const getCarrito = async (req,res) => {
 
     try {
-        const pool = await getConnection();
+        const pool = await getConection();
         const result = await pool.query(queries.getCarrito);
         // para verificar que regrese lo que debe ser console.log(result);
         res.json(result.recordset);
@@ -27,7 +27,7 @@ export const postCarrito = async (req,res) => {
 
     try {
             // la conexion
-            const pool = await getConnection();
+            const pool = await getConection();
             await pool.query(queries.postCarrito,[Fecha,IdUsuario,IdOrden,Total]);
             //Impresion para ver como se esta mandando el body
             console.log(Fecha,IdUsuario,IdOrden,Total);
@@ -43,7 +43,7 @@ export const getCarritoById = async (req,res) =>{
     const {Id} = req.params
 
     try {
-        const pool = await getConnection()
+        const pool = await getConection()
         const result = await pool.query(queries.getCarritoById,Id);
         // Impresion de prueba
         console.log(result);
@@ -60,7 +60,7 @@ export const deleteCarritoById = async (req,res) =>{
     const {Id} = req.params;
 
     try {
-        const pool = await getConnection();
+        const pool = await getConection();
         const result = await pool.query(queries.deleteCarritoById,Id);
         console.log(result);
         res.send(204);    
@@ -80,7 +80,7 @@ export const updateCarritoById = async (req,res) => {
         }
     
     try {
-        const pool = await getConnection();
+        const pool = await getConection();
         const result = await pool.query(queries.updateCarritoById,[Fecha,IdUsuario,IdOrden,Total,Id]);
         res.json(result)
     } catch (error) {

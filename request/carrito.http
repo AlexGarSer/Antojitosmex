@@ -1,6 +1,6 @@
 // Peticiones a productos
 @api_carrito = https://antojitosmex.herokuapp.com/carrito
-@api_deploy = http://localhost:5000/carrito
+@api_deploy = http://localhost:3000/carrito
 
 ### Consulta de Todos los pructos existentes en la tabla
 GET {{api_carrito}}
@@ -13,10 +13,10 @@ POST {{api_carrito}}
 Content-Type: application/json
 
 {
-    "Fecha":"",
-    "IdUsuario":"",
-    "IdOrden":"",
-    "Total":""
+    "Fecha":"2022-10-20 11:11:52",
+    "IdUsuario":2,
+    "IdOrden":1,
+    "Total":20
 }
 
 ###
