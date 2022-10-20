@@ -1,0 +1,61 @@
+// Peticiones a productos
+@api_usuarios = https://antojitosmex.herokuapp.com/usuarios
+@api_deploy = http://localhost:5000/usuarios
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_usuarios}}
+
+###
+GET {{api_deploy}}
+
+### Consulta de insercion de productos
+POST {{api_usuarios}}
+Content-Type: application/json
+
+{
+    "Nombre":"Cocina 1",
+    "Descripcion":"Cuenta de la cocina 1",
+    "IdRol":2
+}
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+    "Nombre":"",
+    "Descripcion":"",
+    "IdRol":
+}
+
+### Consulta de producto por id
+GET {{api_usuarios}}/1
+
+###
+GET {{api_deploy}}/2
+
+### Consulta para elminar un producto por su id
+DELETE {{api_usuarios}}/4
+
+###
+DELETE  {{api_deploy}}/2
+
+### Consulta para actualizar los productos por id
+PUT {{api_usuarios}}/14
+Content-Type: application/json
+
+{
+    "Nombre":"",
+    "Descripcion":"",
+    "IdRol":,
+}
+
+###
+PUT {{api_deploy}}/1
+Content-Type: application/json
+
+{
+    "Nombre":"",
+    "Descripcion":"",
+    "IdRol":,
+}

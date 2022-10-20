@@ -75,7 +75,7 @@ export const updateCarritoById = async (req,res) => {
     const { Fecha,IdUsuario,IdOrden,Total} = req.body
     const {Id} = req.params;
 
-    if(Fecha == null, IdUsuario == null){
+    if(Fecha == null || IdUsuario == null || IdOrden == null || Total == null){
         return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
         }
     

@@ -20,7 +20,7 @@ export const postOrden = async (req,res) => {
     //Aqui se va a estructurar lo que se envia en este metodo
     const {Fecha,Nombre,IdProductos,Comentarios,EstadoDeOrdenDescripcion} = req.body;
     // Valida que los valores no sean nulos
-    if (Fecha == null || Nombre == null || IdProductos == null || Comentarios == null || EstadoDeOrdenDescripcion) {
+    if (Fecha == null || Nombre == null || IdProductos == null || Comentarios == null || EstadoDeOrdenDescripcion == null) {
         return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
     }
 
@@ -73,7 +73,7 @@ export const deleteOrdenById = async (req,res) =>{
 export const updateOrdenById = async (req,res) => {
     const { Fecha,Nombre,IdProductos,Comentarios,EstadoDeOrdenDescripcion} = req.body
 
-    if(Fecha == null || Nombre == null || IdProductos == null || Comentarios == null || EstadoDeOrdenDescripcion){
+    if(Fecha == null || Nombre == null || IdProductos == null || Comentarios == null || EstadoDeOrdenDescripcion == null){
             return res.status(400).json({msg: 'Campos vacios. Rellena todos los campos'})
         }
     

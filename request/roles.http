@@ -1,0 +1,57 @@
+// Peticiones a productos
+@api_roles = https://antojitosmex.herokuapp.com/roles
+@api_deploy = http://localhost:5000/roles
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_roles}}
+
+###
+GET {{api_deploy}}
+
+### Consulta de insercion de productos
+POST {{api_roles}}
+Content-Type: application/json
+
+{
+    "Nombre":"Gerencia",
+    "Descripcion":"Tableta para personal de gerencia"
+}
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+    "Nombre":"M1",
+    "Descripcion":"Tableta de la mesa 1"
+}
+
+### Consulta de producto por id
+GET {{api_roles}}/1
+
+###
+GET {{api_deploy}}/2
+
+### Consulta para elminar un producto por su id
+DELETE {{api_roles}}/4
+
+###
+DELETE  {{api_deploy}}/2
+
+### Consulta para actualizar los productos por id
+PUT {{api_roles}}/14
+Content-Type: application/json
+
+{
+    "Nombre":"",
+    "Descripcion":"",
+}
+
+###
+PUT {{api_deploy}}/1
+Content-Type: application/json
+
+{
+    "Nombre":"",
+    "Descripcion":"",
+}

@@ -1,0 +1,69 @@
+// Peticiones a productos
+@api_orden = https://antojitosmex.herokuapp.com/orden
+@api_deploy = http://localhost:5000/orden
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_orden}}
+
+###
+GET {{api_deploy}}
+
+### Consulta de insercion de productos
+POST {{api_orden}}
+Content-Type: application/json
+
+{
+    "Fecha":"2022-10-20 11:06:42",
+    "Nombre":"Alex",
+    "IdProductos":1,
+    "Comentarios":"Refil",
+    "EstadoDeOrdenDescripcion":"Nuevo"
+}
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "Nombre":"",
+    "IdProductos":"",
+    "Comentarios":"",
+    "EstadoDeOrdenDescripcion":"",
+}
+
+### Consulta de producto por id
+GET {{api_orden}}/1
+
+###
+GET {{api_deploy}}/2
+
+### Consulta para elminar un producto por su id
+DELETE {{api_orden}}/4
+
+###
+DELETE  {{api_deploy}}/2
+
+### Consulta para actualizar los productos por id
+PUT {{api_orden}}/14
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "Nombre":"",
+    "IdProductos":"",
+    "Comentarios":"",
+    "EstadoDeOrdenDescripcion":"",
+}
+
+###
+PUT {{api_deploy}}/1
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "Nombre":"",
+    "IdProductos":"",
+    "Comentarios":"",
+    "EstadoDeOrdenDescripcion":"",
+}

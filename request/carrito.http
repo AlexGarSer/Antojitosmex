@@ -1,0 +1,65 @@
+// Peticiones a productos
+@api_carrito = https://antojitosmex.herokuapp.com/carrito
+@api_deploy = http://localhost:5000/carrito
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_carrito}}
+
+###
+GET {{api_deploy}}
+
+### Consulta de insercion de productos
+POST {{api_carrito}}
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "IdUsuario":"",
+    "IdOrden":"",
+    "Total":""
+}
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "IdUsuario":"",
+    "IdOrden":"",
+    "Total":""
+}
+
+### Consulta de producto por id
+GET {{api_carrito}}/1
+
+###
+GET {{api_deploy}}/2
+
+### Consulta para elminar un producto por su id
+DELETE {{api_carrito}}/4
+
+###
+DELETE  {{api_deploy}}/2
+
+### Consulta para actualizar los productos por id
+PUT {{api_carrito}}/14
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "IdUsuario":"",
+    "IdOrden":"",
+    "Total":""
+}
+
+###
+PUT {{api_deploy}}/1
+Content-Type: application/json
+
+{
+    "Fecha":"",
+    "IdUsuario":"",
+    "IdOrden":"",
+    "Total":""
+}

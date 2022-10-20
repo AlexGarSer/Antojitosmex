@@ -1,0 +1,53 @@
+// Peticiones a productos
+@api_estadodeorden = https://antojitosmex.herokuapp.com/estadodeorden
+@api_deploy = http://localhost:5000/estadodeorden
+
+### Consulta de Todos los pructos existentes en la tabla
+GET {{api_estadodeorden}}
+
+###
+GET {{api_deploy}}
+
+### Consulta de insercion de productos
+POST {{api_estadodeorden}}
+Content-Type: application/json
+
+{
+    "Descripcion":"Finalizado"
+}
+
+###
+POST {{api_deploy}}
+Content-Type: application/json
+
+{
+    "Descripcion":""
+}
+
+### Consulta de producto por id
+GET {{api_estadodeorden}}/1
+
+###
+GET {{api_deploy}}/2
+
+### Consulta para elminar un producto por su id
+DELETE {{api_estadodeorden}}/4
+
+###
+DELETE  {{api_deploy}}/2
+
+### Consulta para actualizar los productos por id
+PUT {{api_estadodeorden}}/14
+Content-Type: application/json
+
+{
+    "Descripcion":""
+}
+
+###
+PUT {{api_deploy}}/1
+Content-Type: application/json
+
+{
+    "Descripcion":""
+}
