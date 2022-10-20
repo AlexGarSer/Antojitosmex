@@ -20,7 +20,7 @@ var getCarrito = /*#__PURE__*/function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return (0, _database.getConnection)();
+            return getConection();
           case 3:
             pool = _context.sent;
             _context.next = 6;
@@ -67,7 +67,7 @@ var postCarrito = /*#__PURE__*/function () {
           case 3:
             _context2.prev = 3;
             _context2.next = 6;
-            return (0, _database.getConnection)();
+            return getConection();
           case 6:
             pool = _context2.sent;
             _context2.next = 9;
@@ -105,7 +105,7 @@ var getCarritoById = /*#__PURE__*/function () {
             Id = req.params.Id;
             _context3.prev = 1;
             _context3.next = 4;
-            return (0, _database.getConnection)();
+            return getConection();
           case 4:
             pool = _context3.sent;
             _context3.next = 7;
@@ -144,7 +144,7 @@ var deleteCarritoById = /*#__PURE__*/function () {
             Id = req.params.Id;
             _context4.prev = 1;
             _context4.next = 4;
-            return (0, _database.getConnection)();
+            return getConection();
           case 4:
             pool = _context4.sent;
             _context4.next = 7;
@@ -191,7 +191,7 @@ var updateCarritoById = /*#__PURE__*/function () {
           case 4:
             _context5.prev = 4;
             _context5.next = 7;
-            return (0, _database.getConnection)();
+            return getConection();
           case 7:
             pool = _context5.sent;
             _context5.next = 10;
